@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const connectDb = require('./db/connectDb')
 const fileUpload = require('express-fileupload');
 const hotelModel = require('./model/hotel');
+const { message } = require('antd');
 
 // exxpress to json
 app.use(express.json())
@@ -104,7 +105,15 @@ app.get( '/api/v1/getAll', async(req,res)=>{
         }
         res.json({message: "apartment was deleted successfully"})
     })
-    // 
+    // update request
+    app.patch('/api/v1/update/:hotelName', async(req,res)=>{
+        const {hotelName} = req.params;
+        const updateHotel = await hotelModel.findOneAndUpdate({hotelName}, req.body, {runValidator: true , new: true})
+        if(!updateHotel){
+            res.json({error: "unable to update"}, req.body, {runValidator: true , new: true})
+        }
+        res.json({message: "apartment was updated successfully", updateHotel})
+    })
 
 app.listen(port, async()=>{
     console.log(`app is runnning on port ${port}`)
