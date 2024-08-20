@@ -3,19 +3,20 @@ const port = 2000;
 require('dotenv').config()
 const app = express()
 const bodyParser = require('body-parser')
-const connectDb = require('./db/connectDb')
-const fileUpload = require('express-fileupload');
-const hotelModel = require('./model/hotel');
-const { message } = require('antd');
+const router = require('./routes/handler')
+const connectDb = require('./db/connectDb');
+
+// const { message } = require('antd');
 
 // exxpress to json
 app.use(express.json())
 // use express file upload
-app.use(fileUpload())
+// app.use(fileUpload())
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
+app.use("/", router)
 app.get('/', (req,res)=>{
     console.log("app is running fine")
 })

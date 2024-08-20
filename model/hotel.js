@@ -16,11 +16,16 @@ const hotelSchema = new mongoose.Schema({
         required: true
     },
     price: {
-        type: String,
+        type: Number,
         required: true
     },
+    owner:{
+        type:mongoose.Types.ObjectId,
+        ref:"User",
+        require:true
+    }
 })
 
-const hotelModel = new mongoose.model('hotel', hotelSchema)
+const hotelModel = new mongoose.model('Hotel', hotelSchema)
 
 module.exports = hotelModel
