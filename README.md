@@ -68,11 +68,11 @@ Ensure you have the following installed:
 ### **Causes**
 | Method | Endpoint                | Description               |
 |--------|-------------------------|---------------------------|
-| POST   | `/causes`               | Create a new cause        |
-| GET    | `/causes`               | Get all causes            |
-| GET    | `/causes/:id`           | Get a specific cause      |
-| PUT    | `/causes/:id`           | Update a specific cause   |
-| DELETE | `/causes/:id`           | Delete a specific cause   |
+| POST   | `/api/v1/create-cause`               | Create a new cause        |
+| GET    | `/api/v1/all-causes`               | Get all causes            |
+| GET    | `/api/v1/get-cause/:id`           | Get a specific cause      |
+| PUT    | `/api/v1/update-cause/:id`           | Update a specific cause   |
+| DELETE | `/api/v1/delete-cause/:id`           | Delete a specific cause   |
 
 **Request Body for Creating/Updating Causes:**
 - `title` (String) - Required
@@ -84,7 +84,7 @@ Ensure you have the following installed:
 ### **Contributions**
 | Method | Endpoint                       | Description                          |
 |--------|--------------------------------|--------------------------------------|
-| POST   | `/causes/:id/contribute`       | Contribute to a specific cause       |
+| POST   | `/api/v1/contribute/:id`       | Contribute to a specific cause       |
 
 **Request Body for Contributions:**
 - `name` (String) - Required
@@ -98,7 +98,7 @@ Ensure you have the following installed:
 ### **Create a Cause**
 **Endpoint:**
 ```http
-POST /causes
+POST /api/v1/create-cause
 ```
 
 **Request (form-data):**
@@ -113,7 +113,7 @@ POST /causes
 ### **Contribute to a Cause**
 **Endpoint:**
 ```http
-POST /causes/:id/contribute
+POST /api/v1/contribute/:id
 ```
 
 **Request (JSON):**
