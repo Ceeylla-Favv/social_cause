@@ -36,8 +36,8 @@ Ensure you have the following installed:
 ### **Setup**
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/causes-contributions-api.git
-   cd causes-contributions-api
+   git clone https://github.com/Ceeylla-Favv/social_cause.git
+   cd social_cause
    ```
 
 2. **Install Dependencies**
