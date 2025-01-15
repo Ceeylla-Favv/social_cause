@@ -57,7 +57,7 @@ Ensure you have the following installed:
 
 4. **Start the Server**
    ```bash
-   npm start
+   npm run dev
    ```
    The server will run on `http://localhost:2025`.
 
